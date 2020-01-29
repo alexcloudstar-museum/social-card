@@ -1,0 +1,27 @@
+.Reactions {
+    display: flex;
+}
+
+.Reactions .Comments,
+.Reactions .Retweet,
+.Reactions .Heart,
+.Reactions .Message {
+    margin: 0 15px;
+}
+
+.Reactions .Comments {
+    color: #617585;
+}
+
+.Reactions .Retweet {
+    color: #02BE58;
+}
+
+.Reactions .Heart {
+    color: #E02760;
+}
+
+.Reactions .Message {
+    color: #AFB7BE;
+    font-size: 18px;
+}

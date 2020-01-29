@@ -1,0 +1,15 @@
+.Post {
+    text-align: left;
+    border-width: 0px 1px 1px 1px ;
+    border-style: solid;
+    border-color: #E4EAEF;
+    border-radius: 0 0 5px 5px;
+}
+
+.Post h2 {
+    font-size: 18px;
+}
+
+.Post p {
+    margin-bottom: 0;
+}

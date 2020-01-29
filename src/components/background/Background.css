@@ -1,0 +1,41 @@
+.Background {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  background-color: #ffa003;
+  text-align: left;
+}
+
+.Background .avatar-col {
+  justify-content: flex-start;
+}
+
+.Background .avatar-col .Avatar {
+  margin-top: 10px;
+}
+
+.Background .avatar-col .Avatar .image {
+  width: 50px;
+  height: 50px;
+  border-radius: 0;
+}
+
+.Background .avatar-col .Avatar .image-user {
+  right: initial;
+  font-size: 24px;
+  left: 17px;
+}
+
+.Background .heading {
+    font-size: 60px;
+}
+
+@media (max-width: 767px) {
+  .Background .Avatar .image {
+    margin: initial;
+  }
+
+  .Background .Avatar .image-user {
+    top: 50%;
+    left: 39px !important;
+  }
+}
