@@ -1,9 +1,11 @@
-import React from 'react';
+import React from "react";
 
-const Website = () => {
-    return <div className="Website pt-1 pb-2">
-            <span className="text-grey">dev.to</span>
-        </div>
-}
+const Website = props => {
+  return (
+    <div className="Website pt-1 pb-2">
+      <span className="text-grey">{props.website}</span>
+    </div>
+  );
+};
 
-export default Website; 
+export default Website;
