@@ -1,9 +1,12 @@
-import React from 'react';
+import React from "react";
 
-const Retweet = () => {
-    return <div className="Retweet text-left">
-            <i className="fas fa-retweet"></i><span>&nbsp;&nbsp; 47</span>
-        </div>
-}
+const Retweet = props => {
+  return (
+    <div className="Retweet text-left">
+      <i className="fas fa-retweet"></i>
+      <span>&nbsp;&nbsp; {props.retweet}</span>
+    </div>
+  );
+};
 
-export default Retweet; 
+export default Retweet;

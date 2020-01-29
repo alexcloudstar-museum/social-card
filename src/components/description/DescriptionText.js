@@ -1,13 +1,14 @@
-import React from 'react';
+import React from "react";
 
-
-const DescriptionText = () => {
-    return (
-        <React.Fragment>
-            <h5>Learning React? Start Small.</h5>
-            <h5>{'{'} author: <span>@dceddia</span> {'}'}</h5>
-        </React.Fragment>
-    );
-}
+const DescriptionText = props => {
+  return (
+    <React.Fragment>
+      <h5 className="text-capitalize">{props.title}</h5>
+      <h5>
+        {"{"} author: <span>@{props.username}</span> {"}"}
+      </h5>
+    </React.Fragment>
+  );
+};
 
 export default DescriptionText;
