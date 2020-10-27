@@ -6,7 +6,7 @@ type TitleProps = {
 
 export const Title: React.FC<TitleProps> = ({ text }) => {
   return (
-    <div className='Title pt-3'>
+    <div className='pt-3'>
       <h2>{text}</h2>
     </div>
   );

@@ -1,13 +1,29 @@
 import React from 'react';
-import './index.css';
+import styled from 'styled-components';
 import { ShortDescription } from './ShortDescription';
 import { Title } from './Title';
 import { Website } from './Website';
 
+const PostWrapper = styled.div`
+  text-align: left;
+  border-width: 0px 1px 1px 1px;
+  border-style: solid;
+  border-color: #e4eaef;
+  border-radius: 0 0 5px 5px;
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+`;
+
 export const Post = () => {
   return (
     <div className='col-sm-12 p-0'>
-      <div className='Post pl-3'>
+      <PostWrapper className='pl-3'>
         <Title text={'Learning React? Start Small.'} />
         <ShortDescription
           text={
@@ -15,7 +31,7 @@ export const Post = () => {
           }
         />
         <Website website={'alexcloudstar.com'} />
-      </div>
+      </PostWrapper>
     </div>
   );
 };

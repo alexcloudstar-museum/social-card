@@ -5,9 +5,5 @@ type ShortDescriptionProps = {
 };
 
 export const ShortDescription: React.FC<ShortDescriptionProps> = ({ text }) => {
-  return (
-    <div className='ShortDescription'>
-      <p>{text}</p>
-    </div>
-  );
+  return <p>{text}</p>;
 };

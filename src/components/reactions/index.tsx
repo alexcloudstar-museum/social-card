@@ -1,10 +1,38 @@
 import React from 'react';
-import './index.css';
+import styled from 'styled-components';
 import { Reaction } from './Reaction';
+
+const ReactionsWrapper = styled.div`
+  display: flex;
+
+  .Comments,
+  .Retweet,
+  .Heart,
+  .Message {
+    margin: 0 15px;
+  }
+
+  .Comments {
+    color: #617585;
+  }
+
+  .Retweet {
+    color: #02be58;
+  }
+
+  .Heart {
+    color: #e02760;
+  }
+
+  .Message {
+    color: #afb7be;
+    font-size: 18px;
+  }
+`;
 
 export const Reactions = () => {
   return (
-    <div className='Reactions text-left pt-3'>
+    <ReactionsWrapper className='text-left pt-3'>
       <Reaction
         classNames={'Comments'}
         iconPrefix={'far'}
@@ -24,6 +52,6 @@ export const Reactions = () => {
         reactionNumber={190}
       />
       <Reaction classNames={'Message'} iconPrefix={'far'} icon={'envelope'} />
-    </div>
+    </ReactionsWrapper>
   );
 };
