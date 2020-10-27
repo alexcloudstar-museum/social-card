@@ -1,12 +1,15 @@
 import React from 'react';
 import SocialCard from './SocialCard';
-import './App.css';
+import GlobalStyles from '../globalStyles';
 
 const App = () => {
   return (
-    <div className='App container text-center mt-4'>
-      <SocialCard />
-    </div>
+    <>
+      <GlobalStyles />
+      <div className='App container text-center mt-4'>
+        <SocialCard />
+      </div>
+    </>
   );
 };
 
