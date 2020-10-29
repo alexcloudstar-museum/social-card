@@ -4,6 +4,7 @@ import { Name } from './Name';
 import { Username } from './Username';
 import { Date } from './Date';
 import { Caret } from './Caret';
+import { BodyProps } from '../../types';
 
 const AuthorWrapper = styled.div`
   h3 {
@@ -31,10 +32,10 @@ const AuthorWrapper = styled.div`
   }
 `;
 
-export const Author = () => {
+export const Author: React.FC<BodyProps> = ({ name }) => {
   return (
     <AuthorWrapper>
-      <Name name={'Alex Cloudstar'} classNames={'name'} />
+      <Name name={name} classNames={'name'} />
       <Username username={'AlexCloudstar'} />
       <Date date='Sep 10' />
       <Caret icon={'fas fa-angle-down'} />

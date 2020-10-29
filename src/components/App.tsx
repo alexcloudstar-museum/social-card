@@ -7,7 +7,7 @@ const App = () => {
     <>
       <GlobalStyles />
       <div className='App container text-center mt-4'>
-        <SocialCard />
+        <SocialCard endPoint={'users'} id={1} />
       </div>
     </>
   );
