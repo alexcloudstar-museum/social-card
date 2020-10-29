@@ -2,6 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { Reaction } from './Reaction';
 
+const randomizeReactions = () => {
+  // returns a random integer from 1 to 100
+  return Math.floor(Math.random() * 100) + 1;
+};
+
 const ReactionsWrapper = styled.div`
   display: flex;
 
@@ -37,19 +42,19 @@ export const Reactions = () => {
         classNames={'Comments'}
         iconPrefix={'far'}
         icon={'comment'}
-        reactionNumber={2}
+        reactionNumber={randomizeReactions()}
       />
       <Reaction
         classNames={'Retweet'}
         iconPrefix={'fas'}
         icon={'retweet'}
-        reactionNumber={47}
+        reactionNumber={randomizeReactions()}
       />
       <Reaction
         classNames={'Heart'}
         iconPrefix={'fas'}
         icon={'heart'}
-        reactionNumber={190}
+        reactionNumber={randomizeReactions()}
       />
       <Reaction classNames={'Message'} iconPrefix={'far'} icon={'envelope'} />
     </ReactionsWrapper>
