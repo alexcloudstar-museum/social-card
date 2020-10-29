@@ -4,7 +4,7 @@ import { Name } from './Name';
 import { Username } from './Username';
 import { Date } from './Date';
 import { Caret } from './Caret';
-import { BodyProps } from '../../types';
+import { UserProps } from '../../types';
 
 const AuthorWrapper = styled.div`
   h3 {
@@ -32,11 +32,11 @@ const AuthorWrapper = styled.div`
   }
 `;
 
-export const Author: React.FC<BodyProps> = ({ name }) => {
+export const Author: React.FC<UserProps> = ({ name, username }) => {
   return (
     <AuthorWrapper>
-      <Name name={name} classNames={'name'} />
-      <Username username={'AlexCloudstar'} />
+      {name && <Name name={name} classNames={'name'} />}
+      {username && <Username username={username} />}
       <Date date='Sep 10' />
       <Caret icon={'fas fa-angle-down'} />
     </AuthorWrapper>
