@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Reaction } from './Reaction';
 
-const randomizeReactions = () => {
+const randomizeReactionsNumber = () => {
   // returns a random integer from 1 to 100
   return Math.floor(Math.random() * 100) + 1;
 };
@@ -42,19 +42,19 @@ export const Reactions = () => {
         classNames={'Comments'}
         iconPrefix={'far'}
         icon={'comment'}
-        reactionNumber={randomizeReactions()}
+        reactionNumber={randomizeReactionsNumber()}
       />
       <Reaction
         classNames={'Retweet'}
         iconPrefix={'fas'}
         icon={'retweet'}
-        reactionNumber={randomizeReactions()}
+        reactionNumber={randomizeReactionsNumber()}
       />
       <Reaction
         classNames={'Heart'}
         iconPrefix={'fas'}
         icon={'heart'}
-        reactionNumber={randomizeReactions()}
+        reactionNumber={randomizeReactionsNumber()}
       />
       <Reaction classNames={'Message'} iconPrefix={'far'} icon={'envelope'} />
     </ReactionsWrapper>
