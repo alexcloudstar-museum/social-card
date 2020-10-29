@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Photo } from './Photo';
 import DummyUser from '../../assets/dummy_user.png';
 import { Name } from '../Author/Name';
+import { UserAndPostProps } from '../../types';
 
 const ProfileWrapper = styled.div`
   display: flex;
@@ -19,11 +20,11 @@ const ProfileWrapper = styled.div`
   }
 `;
 
-export const Profile = () => {
+export const Profile: React.FC<UserAndPostProps> = ({ name }) => {
   return (
     <ProfileWrapper className='mt-4 pb-2 mr-2'>
       <div className='bg-white d-flex'>
-        <Name name={'Dave Ceddia'} classNames={'mb-auto mt-auto pl-2 pr-2'} />
+        {name && <Name name={name} classNames={'mb-auto mt-auto pl-2 pr-2'} />}
         <Photo image={DummyUser} />
       </div>
     </ProfileWrapper>

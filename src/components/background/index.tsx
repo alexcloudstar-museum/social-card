@@ -2,10 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { Avatar, AvatarProps } from '../Avatar';
 import { Profile } from '../Profile';
+import { UserAndPostProps } from '../../types';
 
-type BackgroundProps = AvatarProps & {
-  text?: string;
-};
+type Props = AvatarProps & UserAndPostProps;
 
 const BackgroundWrapper = styled.div`
   width: 100%;
@@ -49,11 +48,7 @@ const BackgroundWrapper = styled.div`
   }
 `;
 
-export const Background: React.FC<BackgroundProps> = ({
-  text,
-  width,
-  height,
-}) => {
+export const Background: React.FC<Props> = ({ title, name, width, height }) => {
   return (
     <BackgroundWrapper className='Background mt-4'>
       <Avatar
@@ -62,8 +57,10 @@ export const Background: React.FC<BackgroundProps> = ({
         width={width}
         height={height}
       />
-      <h3 className='mt-5 mb-5 ml-5 pl-3 text-white heading'>{text}</h3>
-      <Profile />
+      {title && (
+        <h3 className='mt-5 mb-5 ml-5 pl-3 text-white heading'>{title}</h3>
+      )}
+      {name && <Profile name={name} />}
     </BackgroundWrapper>
   );
 };

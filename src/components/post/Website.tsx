@@ -1,13 +1,10 @@
 import React from 'react';
+import { UserAndPostProps } from '../../types';
 
-type WebsiteProps = {
-  website: string;
-};
-
-export const Website: React.FC<WebsiteProps> = ({ website }) => {
+export const Website: React.FC<UserAndPostProps> = ({ website }) => {
   return (
     <div className='pt-1 pb-2'>
-      <span className='text-grey'>{website}</span>
+      {website && <span className='text-grey'>{website}</span>}
     </div>
   );
 };

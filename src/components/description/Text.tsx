@@ -1,10 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
-type TextProps = {
-  text: string;
-  author: string;
-};
+import { UserAndPostProps } from '../../types';
 
 const TextWrapper = styled.div`
   h5 {
@@ -17,13 +13,15 @@ const TextWrapper = styled.div`
   }
 `;
 
-export const Text: React.FC<TextProps> = ({ text, author }) => {
+export const Text: React.FC<UserAndPostProps> = ({ title, username }) => {
   return (
     <TextWrapper>
-      <h5>{text}</h5>
-      <h5>
-        author: <span>@{author}</span>
-      </h5>
+      {title && <h5>{title}</h5>}
+      {username && (
+        <h5>
+          author: <span>@{username}</span>
+        </h5>
+      )}
     </TextWrapper>
   );
 };

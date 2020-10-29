@@ -1,9 +1,6 @@
 import React from 'react';
+import { UserAndPostProps } from '../../types';
 
-type ShortDescriptionProps = {
-  text: string;
-};
-
-export const ShortDescription: React.FC<ShortDescriptionProps> = ({ text }) => {
-  return <p>{text}</p>;
+export const ShortDescription: React.FC<UserAndPostProps> = ({ body }) => {
+  return <>{body && <p>{body}</p>}</>;
 };
