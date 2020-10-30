@@ -2,7 +2,7 @@ import React from 'react';
 import SocialCard from './SocialCard';
 import GlobalStyles from '../globalStyles';
 
-const randomizeId = () => {
+const randomizeId = (): number => {
   // returns a random integer from 1 to 10
   return Math.floor(Math.random() * 10) + 1;
 };

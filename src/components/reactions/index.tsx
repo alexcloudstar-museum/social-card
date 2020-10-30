@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Reaction } from './Reaction';
 
-const randomizeReactionsNumber = () => {
+const randomizeReactionsNumber = (): number => {
   // returns a random integer from 1 to 100
   return Math.floor(Math.random() * 100) + 1;
 };
