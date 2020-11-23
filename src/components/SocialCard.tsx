@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from 'store';
 import { getUser, setLoading } from 'store/actions/userAction';
 import { getPost } from 'store/actions/postAction';
+import { Loader } from './Loader';
 
 type SocialCardProps = {
   id: number;
@@ -25,7 +26,7 @@ const SocialCard: React.FC<SocialCardProps> = ({ id }) => {
   return (
     <>
       {loading ? (
-        <div>loading....</div>
+        <Loader />
       ) : (
         <div className='SocialCard mb-3 row'>
           <Avatar width={70} height={70} shortUsername={'AC'} />
