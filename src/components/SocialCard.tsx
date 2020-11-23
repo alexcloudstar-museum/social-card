@@ -3,39 +3,32 @@ import { Avatar } from './Avatar';
 import { Body } from './Body';
 import API from '../api';
 import { UserProps, PostProps } from '../types';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from 'store';
+import { getUser, setLoading } from 'store/actions/userAction';
 
 type SocialCardProps = {
   id: number;
-  endPoint: string;
   secondEndPoint: string;
 };
 
-const SocialCard: React.FC<SocialCardProps> = ({
-  id,
-  endPoint,
-  secondEndPoint,
-}) => {
-  const [user, setUser] = useState<UserProps>();
+const SocialCard: React.FC<SocialCardProps> = ({ id, secondEndPoint }) => {
   const [post, setPost] = useState<PostProps>();
-  const [loading, setLoading] = useState(true);
 
-  const getUser = (endPoint: string, id: number) => {
-    API.get(`${endPoint}/${id}`).then(res => {
-      setUser(res.data);
-    });
-  };
+  const dispatch = useDispatch();
+  const userData = useSelector((state: RootState) => state.user.data);
+  const loading = useSelector((state: RootState) => state.user.loading);
+
+  useEffect(() => {
+    dispatch(setLoading());
+    dispatch(getUser(id));
+  }, [id, dispatch]);
 
   const getPost = (secondEndPoint: string, id: number) => {
     API.get(`${secondEndPoint}/${id}`).then(res => {
       setPost(res.data);
     });
   };
-
-  useEffect(() => {
-    getUser(endPoint, id);
-    getPost(secondEndPoint, id);
-    setLoading(false);
-  }, [id, endPoint, secondEndPoint]);
 
   return (
     <>
@@ -44,13 +37,14 @@ const SocialCard: React.FC<SocialCardProps> = ({
       ) : (
         <div className='SocialCard mb-3 row'>
           <Avatar width={70} height={70} shortUsername={'AC'} />
-          {user && post ? (
+          {console.log(userData)}
+          {userData ? (
             <Body
-              name={user.name}
-              username={user.username}
-              website={user.website}
-              title={post.title}
-              body={post.body}
+              name={userData.name}
+              username={userData.username}
+              website={userData.website}
+              title={'Hello world'}
+              body={'sajdahsdhdsahsadh'}
             />
           ) : null}
         </div>
