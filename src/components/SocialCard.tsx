@@ -1,56 +1,42 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Avatar } from './Avatar';
 import { Body } from './Body';
-import API from '../api';
-import { UserProps, PostProps } from '../types';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from 'store';
+import { getUser, setLoading } from 'store/actions/userAction';
+import { getPost } from 'store/actions/postAction';
+import { Loader } from './Loader';
 
 type SocialCardProps = {
   id: number;
-  endPoint: string;
-  secondEndPoint: string;
 };
 
-const SocialCard: React.FC<SocialCardProps> = ({
-  id,
-  endPoint,
-  secondEndPoint,
-}) => {
-  const [user, setUser] = useState<UserProps>();
-  const [post, setPost] = useState<PostProps>();
-  const [loading, setLoading] = useState(true);
-
-  const getUser = (endPoint: string, id: number) => {
-    API.get(`${endPoint}/${id}`).then(res => {
-      setUser(res.data);
-    });
-  };
-
-  const getPost = (secondEndPoint: string, id: number) => {
-    API.get(`${secondEndPoint}/${id}`).then(res => {
-      setPost(res.data);
-    });
-  };
+const SocialCard: React.FC<SocialCardProps> = ({ id }) => {
+  const dispatch = useDispatch();
+  const userData = useSelector((state: RootState) => state.user.data);
+  const postData = useSelector((state: RootState) => state.post.data);
+  const loading = useSelector((state: RootState) => state.user.loading);
 
   useEffect(() => {
-    getUser(endPoint, id);
-    getPost(secondEndPoint, id);
-    setLoading(false);
-  }, []);
+    dispatch(setLoading());
+    dispatch(getUser(id));
+    dispatch(getPost(id));
+  }, [id, dispatch]);
 
   return (
     <>
       {loading ? (
-        <div>loading....</div>
+        <Loader />
       ) : (
         <div className='SocialCard mb-3 row'>
           <Avatar width={70} height={70} shortUsername={'AC'} />
-          {user && post ? (
+          {userData && postData ? (
             <Body
-              name={user.name}
-              username={user.username}
-              website={user.website}
-              title={post.title}
-              body={post.body}
+              name={userData.name}
+              username={userData.username}
+              website={userData.website}
+              title={postData.title}
+              body={postData.body}
             />
           ) : null}
         </div>
