@@ -1,14 +1,14 @@
-import { Actions, GET_USER, SET_LOADING, UserState } from 'store/types';
+import { Actions, GET_POST, SET_LOADING, PostState } from 'store/types';
 
-const initialState: UserState = {
+const initialState: PostState = {
   data: null,
   loading: false,
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default (state = initialState, action: Actions): UserState => {
+export default (state = initialState, action: Actions): PostState => {
   switch (action.type) {
-    case GET_USER:
+    case GET_POST:
       return {
         ...state,
         data: action.payload,

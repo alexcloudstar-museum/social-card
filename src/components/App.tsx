@@ -12,7 +12,7 @@ const App = () => {
     <>
       <GlobalStyles />
       <div className='App container text-center mt-4'>
-        <SocialCard secondEndPoint={'posts'} id={randomizeId()} />
+        <SocialCard id={randomizeId()} />
       </div>
     </>
   );

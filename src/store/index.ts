@@ -3,11 +3,11 @@ import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import thunk from 'redux-thunk';
 
 import userReducer from 'store/reducers/userReducer';
-// import postReducer from 'store/reducers/postReducer';
+import postReducer from 'store/reducers/postReducer';
 
 const rootReducer = combineReducers({
   user: userReducer,
-  // post: postReducer,
+  post: postReducer,
 });
 
 const store = createStore(
