@@ -35,7 +35,7 @@ const SocialCard: React.FC<SocialCardProps> = ({
     getUser(endPoint, id);
     getPost(secondEndPoint, id);
     setLoading(false);
-  }, []);
+  }, [id, endPoint, secondEndPoint]);
 
   return (
     <>
