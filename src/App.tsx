@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-const App = () => {
-  return <div>App</div>;
+import SocialCard from 'components/SocialCard/View/Container';
+import GlobalStyle from 'globalStyles';
+
+const App: FC = () => {
+  return (
+    <>
+      <GlobalStyle />
+      <SocialCard />
+    </>
+  );
 };
 
 export default App;
