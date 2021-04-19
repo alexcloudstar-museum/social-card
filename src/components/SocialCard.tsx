@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Avatar } from './Avatar';
 import { Body } from './Body';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from 'store';
 import { getUser, setLoading } from 'store/actions/userAction';
