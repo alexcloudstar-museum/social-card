@@ -1,4 +1,5 @@
-import { Actions, GET_POST, SET_LOADING, PostState } from 'store/types';
+import { ActionType } from '../action-types';
+import { Actions, PostState } from 'store/types';
 
 const initialState: PostState = {
   data: null,
@@ -8,13 +9,13 @@ const initialState: PostState = {
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (state = initialState, action: Actions): PostState => {
   switch (action.type) {
-    case GET_POST:
+    case ActionType.GET_POST:
       return {
         ...state,
         data: action.payload,
         loading: false,
       };
-    case SET_LOADING:
+    case ActionType.SET_LOADING:
       return {
         ...state,
         loading: true,

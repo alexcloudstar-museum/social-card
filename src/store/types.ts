@@ -1,6 +1,4 @@
-export const GET_USER = 'GET_USER';
-export const GET_POST = 'GET_POST';
-export const SET_LOADING = 'SET_LOADING';
+import { ActionType } from './action-types';
 
 export interface User {
   name: string;
@@ -16,7 +14,7 @@ export interface UserState {
   loading: boolean;
 }
 interface GetUserAction {
-  type: typeof GET_USER;
+  type: typeof ActionType.GET_USER;
   payload: User;
 }
 export interface PostState {
@@ -24,11 +22,11 @@ export interface PostState {
   loading: boolean;
 }
 interface GetPostAction {
-  type: typeof GET_POST;
+  type: typeof ActionType.GET_POST;
   payload: Post;
 }
 interface SetLoadingAction {
-  type: typeof SET_LOADING;
+  type: typeof ActionType.SET_LOADING;
 }
 
 export type Actions = GetUserAction | GetPostAction | SetLoadingAction;
