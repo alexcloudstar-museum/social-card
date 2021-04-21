@@ -1,8 +1,8 @@
 import api from 'api';
 import { ThunkAction } from 'redux-thunk';
 import { RootState } from 'store';
-
-import { Actions, GET_USER, SET_LOADING, User } from 'store/types';
+import { ActionType } from '../action-types';
+import { Actions, User } from 'store/types';
 
 export const getUser = (
   id: number
@@ -14,7 +14,7 @@ export const getUser = (
       const resData: User = await res.data;
 
       dispatch({
-        type: GET_USER,
+        type: ActionType.GET_USER,
         payload: resData,
       });
     } catch (err) {
@@ -25,6 +25,6 @@ export const getUser = (
 
 export const setLoading = (): Actions => {
   return {
-    type: SET_LOADING,
+    type: ActionType.SET_LOADING,
   };
 };

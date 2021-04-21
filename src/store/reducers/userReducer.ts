@@ -1,4 +1,5 @@
-import { Actions, GET_USER, SET_LOADING, UserState } from 'store/types';
+import { ActionType } from '../action-types';
+import { Actions, UserState } from 'store/types';
 
 const initialState: UserState = {
   data: null,
@@ -8,13 +9,13 @@ const initialState: UserState = {
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (state = initialState, action: Actions): UserState => {
   switch (action.type) {
-    case GET_USER:
+    case ActionType.GET_USER:
       return {
         ...state,
         data: action.payload,
         loading: false,
       };
-    case SET_LOADING:
+    case ActionType.SET_LOADING:
       return {
         ...state,
         loading: true,

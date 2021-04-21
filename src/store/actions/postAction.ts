@@ -1,8 +1,8 @@
 import api from 'api';
 import { ThunkAction } from 'redux-thunk';
 import { RootState } from 'store';
-
-import { Actions, GET_POST, SET_LOADING, Post } from 'store/types';
+import { ActionType } from '../action-types';
+import { Actions, Post } from 'store/types';
 
 export const getPost = (
   id: number
@@ -14,7 +14,7 @@ export const getPost = (
       const resData: Post = await res.data;
 
       dispatch({
-        type: GET_POST,
+        type: ActionType.GET_POST,
         payload: resData,
       });
     } catch (err) {
@@ -25,6 +25,6 @@ export const getPost = (
 
 export const setLoading = (): Actions => {
   return {
-    type: SET_LOADING,
+    type: ActionType.SET_LOADING,
   };
 };
