@@ -1,7 +1,7 @@
 {
   "name": "social-card-react",
   "homepage": "https://alexcloudstar.github.io/social-card/",
-  "version": "0.1.55",
+  "version": "0.1.58",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
