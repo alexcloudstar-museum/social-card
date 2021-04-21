@@ -1,6 +1,8 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { Author } from 'shared/Author/View/Container';
 import { Background } from 'shared/Background/View';
+
+import { BodyWrapper } from '../style';
 
 import { Post } from 'shared/Post/View/Container';
 import { Reactions } from 'shared/Reactions/View/Container';
@@ -13,7 +15,7 @@ export const Body: FC<UserAndPostProps> = ({
   body,
   website,
 }) => (
-  <div className='col-sm-12 col-md-10 mt-auto mb-auto'>
+  <BodyWrapper className='col-sm-12 col-md-10 mt-auto mb-auto'>
     <div className='Body'>
       {name && username && (
         <Author name={name} username={username} title={title} />
@@ -26,5 +28,5 @@ export const Body: FC<UserAndPostProps> = ({
       )}
       <Reactions />
     </div>
-  </div>
+  </BodyWrapper>
 );
