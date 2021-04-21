@@ -1,4 +1,5 @@
 interface SocialCardType {
+  id: number;
   className?: string;
 }
 
